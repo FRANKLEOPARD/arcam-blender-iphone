@@ -206,7 +206,7 @@ UDP is unencrypted and unauthenticated: anyone on the same network could send th
 ## Tested on
 | Blender | OS | iPhone / iOS | Result |
 |---|---|---|---|
-| _fill in_ | _fill in_ | _fill in_ | _fill in_ |
+| _Blender_ | _5.3.0_ | _15/2.0.1_ | _Ok_ |
 
 ## Contributing / roadmap ideas
 Lens/FOV sync from ARKit intrinsics, OSC output, multi-take manager, Android (ARCore) client.
