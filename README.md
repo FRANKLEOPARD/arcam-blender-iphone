@@ -145,7 +145,7 @@ for the selected screen orientation; `tracking` 0 = not available, 1 = limited, 
 ## Tested on
 | Blender | OS | iPhone / iOS | Result |
 |---|---|---|---|
-| _fill in_ | _fill in_ | _fill in_ | _fill in_ |
+| _Ok_ | _5.3_ | _15/27.0.1_ | _Perfect_ |
 
 ## Contributing / roadmap ideas
 Lens/FOV sync from ARKit intrinsics, OSC output, multi-take manager, Android (ARCore) client, in-app record button.
