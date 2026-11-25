@@ -81,7 +81,7 @@ degrees. `time_s` is in seconds from the first sample, so it is independent of t
 A. Every week due to apple 7days Id limit
 1. Download the IPA
 2. Install it from **Windows or macOS** with **Sideloadly** (free Apple ID; on Windows install iTunes and iCloud from
-   Apple's website, not the Microsoft Store). The app is re-signed on your PC, so Xcode is never needed.
+   Apple's website, not the Microsoft Store).
 3. On the iPhone: enable **Developer Mode** (Settings → Privacy & Security), then trust your Apple ID profile
    (Settings → General → VPN & Device Management).
 4. In Blender: **Preferences → Add-ons → Install from Disk →** `arcam_blender_addon.py`, enable it.
