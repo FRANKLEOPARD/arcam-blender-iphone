@@ -1,0 +1,30 @@
+name: ARCamStream
+options:
+  bundleIdPrefix: com.arcam
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  ARCamStream:
+    type: application
+    platform: iOS
+    sources:
+      - ARCamStream
+    info:
+      path: ARCamStream/Info.plist
+      properties:
+        CFBundleDisplayName: ARCam Stream
+        UILaunchScreen: {}
+        NSCameraUsageDescription: "ARKit needs the camera to track the phone position."
+        NSLocalNetworkUsageDescription: "Sends the camera pose to Blender on your computer."
+        UIRequiredDeviceCapabilities:
+          - arkit
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arcam.stream
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_IDENTITY: ""
