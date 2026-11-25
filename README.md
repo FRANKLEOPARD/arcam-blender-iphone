@@ -79,31 +79,6 @@ degrees. `time_s` is in seconds from the first sample, so it is independent of t
 
 ## Workflow
 
-### A. One-time setup (no Mac needed)
-1. **Fork / create a public GitHub repo** with these files (public repos get free macOS CI minutes).
-2. Open **Actions → Build → Run workflow**. Three jobs run:
-   1. `python-checks` (Ubuntu): `py_compile` on the Python files, then `tests/test_listener.py`.
-   2. `ios-ipa` (macOS runner): installs XcodeGen → generates the Xcode project from `ios/project.yml` →
-      `xcodebuild` an **unsigned** Release build for the iOS device SDK → zips `Payload/ARCamStream.app` into
-      `ARCamStream.ipa` → uploads it as the artifact **ARCamStream-ipa**.
-   3. `release` (only for tags `v*`): attaches `ARCamStream.ipa` and the add-on to a GitHub Release.
-3. Download the IPA (artifact, or Release asset after `git tag v1.0.0 && git push --tags`).
-4. Install it from **Windows or macOS** with **Sideloadly** (free Apple ID; on Windows install iTunes and iCloud from
-   Apple's website, not the Microsoft Store). The app is re-signed on your PC, so Xcode is never needed.
-5. On the iPhone: enable **Developer Mode** (Settings → Privacy & Security), then trust your Apple ID profile
-   (Settings → General → VPN & Device Management).
-6. In Blender: **Preferences → Add-ons → Install from Disk →** `arcam_blender_addon.py`, enable it.
-
-Free Apple ID limits: the app expires after **7 days** (re-install with Sideloadly) and max 3 sideloaded apps.
-Check the Sideloadly website for its current requirements.
-
-#### Old Mac that cannot run a recent Xcode?
-You do not need Xcode at all: the app is compiled on GitHub's macOS runners (step 2). The Mac, or a Windows PC, is only
-used to install the finished IPA on the phone. Sideloadly's FAQ says it supports macOS 10.12 and newer, with newer
-versions recommended, so check the Sideloadly website for the current requirements. Xcode itself is only needed if you
-want to edit and debug the app locally, and each Xcode release requires a minimum macOS version.
-
-### B. Each session
 1. PC and iPhone on the same network (own router or iPhone hotspot; many school/guest Wi-Fi networks block
    device-to-device traffic). Allow Blender through the Windows firewall on **private** networks.
 2. Blender: pick the camera, press **Start listening**, note the PC IP shown in the panel.
@@ -112,12 +87,6 @@ want to edit and debug the app locally, and each Xcode release requires a minimu
 4. Hold the phone where you want the shot to start, press **Recenter to start**. Walk.
 5. **Record take** → shoot → **Stop & save take**. The CSV path is reported in Blender's status bar.
 6. Review: press **Stop** (listening) before scrubbing, otherwise live data overrides the animation.
-
-### C. Testing without a phone
-```
-python tools/fake_phone.py            # sends a 2 m circular camera walk to 127.0.0.1:9000
-python tests/test_listener.py         # automated protocol tests
-```
 
 ---
 
