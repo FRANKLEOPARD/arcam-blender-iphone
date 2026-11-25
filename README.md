@@ -78,7 +78,15 @@ degrees. `time_s` is in seconds from the first sample, so it is independent of t
 ---
 
 ## Workflow
+A. Every week due to apple 7days Id limit
+1. Download the IPA (artifact, or Release asset after `git tag v1.0.0 && git push --tags`).
+2. Install it from **Windows or macOS** with **Sideloadly** (free Apple ID; on Windows install iTunes and iCloud from
+   Apple's website, not the Microsoft Store). The app is re-signed on your PC, so Xcode is never needed.
+3. On the iPhone: enable **Developer Mode** (Settings → Privacy & Security), then trust your Apple ID profile
+   (Settings → General → VPN & Device Management).
+4. In Blender: **Preferences → Add-ons → Install from Disk →** `arcam_blender_addon.py`, enable it.
 
+B.
 1. PC and iPhone on the same network (own router or iPhone hotspot; many school/guest Wi-Fi networks block
    device-to-device traffic). Allow Blender through the Windows firewall on **private** networks.
 2. Blender: pick the camera, press **Start listening**, note the PC IP shown in the panel.
